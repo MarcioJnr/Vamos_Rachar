@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp"
     android:background="#b883d4"
     tools:context=".MainActivity">
@@ -11,43 +12,50 @@
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VAMOS RACHAR"
+        android:text="@string/title_text"
         android:textSize="24sp"
         android:textColor="#000000"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp" />
 
-    <EditText
-        android:id="@+id/amountEditText"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/titleTextView"
-        android:layout_marginBottom="16dp"
-        android:drawableStart="@drawable/ic_money"
-        android:drawablePadding="8dp"
-        android:hint="Valor"
-        android:inputType="numberDecimal"
-        android:textColor="#000000"
-        android:textColorHint="#808080"
-        android:background="#FFFFFF"
-        android:padding="8dp"
-        android:imeOptions="actionDone" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/peopleEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/amountEditText"
-        android:layout_marginBottom="16dp"
-        android:drawableStart="@drawable/ic_people"
-        android:drawablePadding="8dp"
-        android:hint="Número de Pessoas"
-        android:inputType="number"
-        android:textColor="#000000"
-        android:textColorHint="#808080"
-        android:background="#FFFFFF"
-        android:padding="8dp"
-        android:imeOptions="actionDone" />
+        <EditText
+            android:id="@+id/amountEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@drawable/ic_money"
+            android:drawablePadding="8dp"
+            android:hint="@string/amount_hint"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textColorHint="#808080"
+            android:background="#FFFFFF"
+            android:padding="8dp"
+            android:imeOptions="actionDone" />
+
+        <EditText
+            android:id="@+id/peopleEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@drawable/ic_people"
+            android:drawablePadding="8dp"
+            android:hint="@string/people_hint"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textColorHint="#808080"
+            android:background="#FFFFFF"
+            android:padding="8dp"
+            android:imeOptions="actionDone" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/resultTextView"
@@ -56,33 +64,37 @@
         android:textColor="#FFFFFF"
         android:textSize="32sp"
         android:gravity="center"
-        android:layout_below="@id/peopleEditText"
         android:layout_marginTop="16dp" />
 
-    <ImageButton
-        android:id="@+id/speakButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@id/resultTextView"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_alignParentEnd="true"
-        android:background="@null"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_speak"
-        android:contentDescription="Falar Valor" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <ImageButton
-        android:id="@+id/shareButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@id/resultTextView"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_toStartOf="@id/speakButton"
-        android:background="@null"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_share"
-        android:contentDescription="Compartilhar" />
+        <ImageButton
+            android:id="@+id/speakButton"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_speak"
+            android:contentDescription="@string/speak_button_description" />
 
-</RelativeLayout>
+        <ImageButton
+            android:id="@+id/shareButton"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_share"
+            android:contentDescription="@string/share_button_description" />
+
+    </LinearLayout>
+
+</LinearLayout>

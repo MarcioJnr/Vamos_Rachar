@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_text">LET\'S SPLIT</string>
+    <string name="amount_hint">Amount</string>
+    <string name="people_hint">Number of People</string>
+    <string name="speak_button_description">Speak Value</string>
+    <string name="share_button_description">Share</string>
+</resources>
